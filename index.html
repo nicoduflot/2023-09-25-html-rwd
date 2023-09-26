@@ -7,7 +7,8 @@
     <meta name="description" content="La formation HTML5 CSS3 RWD" />
     <title>DAWAN - Formation HTML5 - CSS3 - RWD</title>
     <!-- on pose généralement après le title les balises pour le css et le js -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" media="screen" />
+    <link rel="stylesheet" href="./css/print.css" media="print" />
 </head>
 
 <body>
@@ -16,27 +17,41 @@
     </header>
     <nav>
         <ul>
-            <li><a href="./">Accueil</a></li>
-            <li><a href="./article.html">Article</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-            <li><a href="./media.html">Media</a></li>
-            <li><a href="./animation.html">Animation</a></li>
-            <li><a href="./trucs.html">Trucs CSS</a></li>
-            <li><a href="./grid.html">Grille CSS</a></li>
-            <li><a href="./bootstrap.html">Bootstrap</a></li>
+            <li><a href="./" title="Lien vers l'accueil">Accueil</a></li>
+            <li><a href="./article.html" title="Lien vers l'article">Article</a></li>
+            <li><a href="./contact.html" title="lien vers le formulaire de contact">Contact</a></li>
+            <li><a href="./media.html" title="lien vers l'affichage des media">Media</a></li>
+            <li><a href="./animation.html" title="lien vers les animation en CSS">Animation</a></li>
+            <li><a href="./trucs.html" title="lien vers des trucs CSS">Trucs CSS</a></li>
+            <li><a href="./grid.html" title="lien vers les grille en CSS">Grille CSS</a></li>
+            <li><a href="./bootstrap.html" title="lien vers une page faîte en utlisant bootstrap">Bootstrap</a></li>
         </ul>
     </nav>
     <main>
+        <section>
+            <aside>
+                <h2>Table des matières</h2>
+                <nav class="tm">
+                    <!-- liste non ordonnée contenant les ancres de page des titre h2 de la page d'accueil -->
+                    <ol>
+                        <li><a href="./#balises-contenu" title="aller à la partie balises de contenu">Les balises de contenu texte</a></li>
+                        <li><a href="./#balises-texte" title="aller à la partie balise de texte">Les balises sur le texte texte</a></li>
+                        <li><a href="./#problemes-en-css" title="aller à la partie les problèmes en CSS">Problèmes courants en CSS</a></li>
+                        <li>Images (Documentation en cours)</li>
+                    </ol>
+                </nav>
+            </aside>
+        </section>
         <section>
         </section>
         <section>
             <article>
                 <header>
-                    <h2>HTML : Les balises de contenu texte</h2>
+                    <h2 id="balises-contenu">HTML : Les balises de contenu texte</h2>
                 </header>
                 <main>
                     <p>
-                        Le texte doit toujours être compris dans des balises de contenus de type paragraphes, comme des
+                        <b>Le texte doit toujours être compris dans des balises de contenus de type paragraphes</b>, comme des
                         bloc de citation, tu texte préformaté, etc.<br />
                         La balise <code>&lt;br /&gt;</code> permet un retour chariot au sein d'un paragraphe.
                     </p>
@@ -80,7 +95,7 @@ sit at voluptatibus.
             </article>
             <article>
                 <header>
-                    <h2>Des balises sur le texte</h2>
+                    <h2 id="balises-texte">Des balises sur le texte</h2>
                 </header>
                 <main>
                     <p>
@@ -93,7 +108,7 @@ sit at voluptatibus.
                     <p>
                         Lorem ipsum dolor sit amet <small>consectetur</small> adipisicing elit.
                         Deserunt eligendi
-                        asperiores quos maxime explicabo non nam dolores aliquid molestias vitae harum provident porro,
+                        asperiores quos <a href="#">explicabo</a> non nam dolores aliquid molestias vitae harum provident porro,
                         quam corrupti. At esse accusantium consequuntur alias.
                     </p>
                     <p>
@@ -118,7 +133,7 @@ sit at voluptatibus.
             </article>
             <article>
                 <header>
-                    <h2>Problèmes courant en CSS</h2>
+                    <h2 id="problemes-en-css">Problèmes courant en CSS</h2>
                 </header>
                 <main>
                     <p>

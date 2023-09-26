@@ -62,14 +62,26 @@ sélecteur CSS :
 
 */
 
+/* Les imports doivent toujours être fait en premier sur un fichier CSS */
+
+@import url('./edosz.css');
+@import url('./roboto.css');
+
 /* surcharge de la racine */
 :root{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7rem;
     --base-goutiere: 0.5rem;
     --goutiere-w: var(--base-goutiere);
     --goutiere-h: calc( var(--base-goutiere) * 2 );
-    font-size: 1.1rem;
-    line-height: 1.7rem;
+    --liens-page: darkred;
+    --liens-page-hover: rgb(210, 70, 0);
+    --liens-nav: white;
+    --bg-nav: black;
+    --liens-nav-hover: var(--bg-nav);
+    --bg-nav-hover: var(--liens-nav);
+    --heading-font: 'edosz';
 }
 
 /* Déclaration générales */
@@ -81,17 +93,36 @@ sélecteur CSS :
 h1, h2, h3, h4, h5, h6{
     margin: 0;
     line-height: 2rem;
+    font-family: var(--heading-font);
+    letter-spacing: 2px;
 }
 
 pre{
     text-wrap: wrap;
 }
 
+a{
+    text-decoration: none;
+    color: var(--liens-page);
+}
+
+a:hover, a:focus{
+    color: var(--liens-page-hover);
+}
+
 /* Déclaration classes */
 
+.tm ol{
+    list-style-type: upper-roman;
+}
+
+.tm li::marker{
+    color: var(--liens-page);
+}
+
 .rouge-gras{
-    font-weight: bold;
     color: #8b0000;
+    font-weight: bold;
 }
 
 .content-width{
@@ -124,6 +155,15 @@ body{
     margin: 0;
 }
 
-body > main article{
+body > header{
+    background-color: var(--bg-nav);
+    color: var(--liens-nav);
+    padding: 1rem;
+    text-align: center;
+}
+
+body > main article, 
+body > main aside{
     margin: var(--goutiere-h) var(--goutiere-w);
 }
+

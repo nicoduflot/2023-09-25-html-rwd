@@ -1,0 +1,19 @@
+a, a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+pre{
+    text-wrap: wrap;
+}
+
+body{
+    width: 19cm;
+    height: 25.7cm;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body > nav{
+    display: none;
+}
