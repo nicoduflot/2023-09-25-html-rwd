@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,9 +9,156 @@
     <!-- on pose généralement après le title les balises pour le css et le js -->
     <link rel="stylesheet" href="./css/style.css" />
 </head>
+
 <body>
     <header>
         <h1>Formation HTML5 CSS3 RWD</h1>
     </header>
+    <nav>
+        <ul>
+            <li><a href="./">Accueil</a></li>
+            <li><a href="./article.html">Article</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./media.html">Media</a></li>
+            <li><a href="./animation.html">Animation</a></li>
+            <li><a href="./trucs.html">Trucs CSS</a></li>
+            <li><a href="./grid.html">Grille CSS</a></li>
+            <li><a href="./bootstrap.html">Bootstrap</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+        </section>
+        <section>
+            <article>
+                <header>
+                    <h2>HTML : Les balises de contenu texte</h2>
+                </header>
+                <main>
+                    <p>
+                        Le texte doit toujours être compris dans des balises de contenus de type paragraphes, comme des
+                        bloc de citation, tu texte préformaté, etc.<br />
+                        La balise <code>&lt;br /&gt;</code> permet un retour chariot au sein d'un paragraphe.
+                    </p>
+                    <hr />
+                    <p>
+                        Les balises de contenus peuvent être en affichage bloc <code>display: block</code>, c'est à dire
+                        qu'elles prennent tout l'espace disponible en largeur, et d'autre qui don <code>inline</code>,
+                        elle "entourent" le contenu et servent a appliquer des styles CSS, soit prédéterminés comme
+                        <code>&lt;code&gt;</code> ou <code>&lt;b&gt;</code>, etc.
+                    </p>
+                    <p>
+                        Attention, des balises pour écrire en gras ou en italique, il en existe plusieurs, et c'est la
+                        porté du référencement qui sera impacté.
+                    </p>
+                    <p>
+                        Normalement, la balise du texte en gras est <b><code>&lt;b&gt;</code></b>. En revanche, il
+                        existe la balise <strong><code>&lt;strong&gt;</code></strong>, qui implique un impact SEO, qui
+                        insiste sur l'importance du terme en gras dans la sémantique HTML.
+                    </p>
+                    <p>
+                        Même principe pour l'italique, la balise du texte <i><code>&lt;i&gt;</code></i>. En revanche, il
+                        existe la balise <em><code>&lt;em&gt;</code></em>, qui implique un impact SEO, qui insiste sur
+                        l'importance du terme en italique dans la sémantique HTML.
+                    </p>
+                    <blockquote>
+                        <q>Tu quoque filis ?</q><br />
+                        <cite>Jules César</cite>
+                    </blockquote>
+                    <p>
+                        <q>I'm Batman</q>, <cite>Batman</cite>.
+                    </p>
+                    <pre>
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+Tempora sapiente blanditiis quam. Eligendi sint, maxime nemo natus odio ipsa quae? Earum molestias quidem facere optio commodi ducimus 
+sit at voluptatibus.
+                    </pre>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Des balises sur le texte</h2>
+                </header>
+                <main>
+                    <p>
+                        Autrefois, on utilisait la balise <code>&lt;font&gt;</code>, qui est <font color="#8B0000"
+                            size="4" face="Times New Roman">décommissionnée</font>
+                    </p>
+                    <p>
+                        H<sub>2</sub>SO<sub>4</sub><sup>2-</sup>
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet <small>consectetur</small> adipisicing elit.
+                        Deserunt eligendi
+                        asperiores quos maxime explicabo non nam dolores aliquid molestias vitae harum provident porro,
+                        quam corrupti. At esse accusantium consequuntur alias.
+                    </p>
+                    <p>
+                        En web, on ne <u>souligne jamais du texte</u> sauf s'il s'agit d'un lien, les visiteurs
+                        pourraient confondre avec un lien et tenrer de cliquer dessus, on peut aussi <s>biffer</s> les
+                        mots ou les <mark>surligner au marqueur fluo</mark>.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, minima recusandae!
+                        Necessitatibus obcaecati explicabo a. Repellat, vel blanditiis dignissimos maiores soluta cum
+                        dicta, doloribus beatae, totam tempora accusantium cupiditate ratione.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, <span class="rouge-gras">consectetur</span> adipisicing elit. Maiores minus, sunt ad tempora soluta
+                        quasi quae illo quos porro officiis consectetur alias, animi cumque nam quis iusto sequi? Autem,
+                        fuga?
+                    </p>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Problèmes courant en CSS</h2>
+                </header>
+                <main>
+                    <p>
+                        Les tailles des éléments sont définis par défaut sur le contenu des éléments, c'est à dirs que
+                        si je défini une div des 200px de large, avec une marge intérieure de 10px et une pordure de 1px
+                        de large, la place totle de l'élément sur l'écran sera de :
+                        200px + 10px + 10px + 1px + 1px (contenu + marge intérieur gauche + marge intérieur droite +
+                        largeur bordure à gauche + largeur bordure à droite ) => 222px.<br />
+                        c'est la propriété css box-sizing qui est à 'content-box' par défaut.<br />
+                        Pour éviter cela, on appliquera 'border-box' à tous les éléments grace au caractère spécial *
+                        dans la déclaration CSS.
+                    </p>
+                    <div class="content-width">
+                        Content box : <br />
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis commodi vel dolores esse.
+                    </div>
+                    <div class="border-width">
+                        Border box : <br />
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ipsam molestias architecto.
+                    </div>
+                    <h3>EM vs REM</h3>
+                    <div class="deux-em">
+                        Coucou
+                        <div class="deux-em">
+                            Coucou
+                        </div>
+                    </div>
+                    <div class="deux-rem">
+                        Coucou
+                        <div class="deux-rem">
+                            Coucou
+                        </div>
+                    </div>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+        </section>
+    </main>
 </body>
+
 </html>
