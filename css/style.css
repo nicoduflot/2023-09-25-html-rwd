@@ -102,7 +102,8 @@ h1, h2, h3, h4, h5, h6{
 }
 
 pre{
-    text-wrap: wrap;
+    white-space: pre-wrap;
+
 }
 
 a{
@@ -119,6 +120,10 @@ p a::before{
     content: "\f470";
     display: inline-block;
     font-size: 1.1rem;
+}
+
+video{
+    background-color: var(--bg-nav);
 }
 
 /* Déclaration classes */

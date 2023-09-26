@@ -24,5 +24,131 @@
             <li><a href="./bootstrap.html" title="lien vers une page faîte en utlisant bootstrap">Bootstrap</a></li>
         </ul>
     </nav>
+    <main>
+        <section>
+            <article>
+                <header>
+                    <h2>Les media</h2>
+                </header>
+                <main>
+                    <h3>L'audio</h3>
+                    <h4>
+                        Pour l'audio hébergé sur le site
+                    </h4>
+                    <p>
+                        Il existe la balise <code>&lt;audio&gt;</code> 
+                    </p>
+                    <audio src="./media/audio/diablo_town.mp3" controls preload="auto"></audio>
+                    <p>
+                        Il est possible de donner des source de fichiers différentes : le navigateur va utiliser le premier format qu'il sera capable de lire.
+                    </p>
+                    <audio controls preload="metadata">
+                        <source src="./media/audio/diablo_town.ogg" type="audio/ogg" />
+                        <source src="./media/audio/diablo_town.mp3" type="audio/mp3" />
+                    </audio>
+                    <h4>
+                        L'audio hébérgé sur un site tier
+                    </h4>
+                    <p>
+                        Pour les media audio hébergés sur des sites tiers, il s'agit en fait de pages contenants un lecteur et la ressource audio qui sont appelés dans une iframe.
+                    </p>
+                    <p>
+                        Grâce à ça, le lecteur peut être fait en HTML - CSS, les contrôles affichés sont généralement gérés avec du JavaScript
+                    </p>
+                    <h4>Spotify</h4>
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/18igBPF6WY3fmeM3UgQjn8?utm_source=generator&theme=0" width="50%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <h4>Soundcloud</h4>
+                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1465583221&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                    
+                    <h4>Bandcamp</h4>
+                    <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=3828771716/size=large/bgcol=333333/linkcol=e99708/tracklist=false/transparent=true/" seamless><a href="https://weswaltz.bandcamp.com/album/more-is-more">More Is More de Wes Waltz</a></iframe>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Les media</h2>
+                </header>
+                <main>
+                    <h3>La vidéo</h3>
+                    <h4>
+                        Pour la vidéo hébergé sur le site
+                    </h4>
+                    <p>
+                        Il existe la balise <code>&lt;video&gt;</code> 
+                    </p>
+                    <video src="./media/video/Fallout-4-Launch-Trailer.mp4" controls preload="auto" poster="./images/cropped-wallhaven-fallout-4-01-3-1536x922.jpg" muted></video>
+                    <p>
+                        Il est possible de donner des source de fichiers différentes : le navigateur va utiliser le premier format qu'il sera capable de lire.
+                    </p>
+                    <video controls preload="auto">
+                        <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mov" type="video/mov" />
+                        <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.webm" type="video/webm" />
+                        <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+                    </video>
+                    <h4>
+                        La vidéo hébérgée sur un site tier
+                    </h4>
+                    <p>
+                        Pour les media video hébergés sur des sites tiers, il s'agit en fait de pages contenants un lecteur et la ressource vidéo qui sont appelés dans une iframe.
+                    </p>
+                    <p>
+                        Grâce à ça, le lecteur peut être fait en HTML - CSS, les contrôles affichés sont généralement gérés avec du JavaScript
+                    </p>
+                    <h4>Youtube</h4>
+                    <p>
+                        Youtube impose un format da l'iframe, il faudra modifier le CSS voir créer un élément enveloppeur afin de rendre l'iframe adaptative
+                    </p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rrT6v5sOwJg?si=Y2hpSkf4PmUbk4re" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <h4>Daily motion</h4>
+                    <p>
+                        Daily motion apporte une solution adaptative inclue, avec un élément conteneur et une iframe appliquant du style CSS enbalise afin d'assurer l'adaptabilité à la largeur de l'affichage (device-width)
+                    </p>
+                    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                        <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x1nofw" width="100%" height="100%" allowfullscreen title="Dailymotion Video Player" ></iframe>
+                        </div>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Les iframes</h2>
+                    <p>
+                        Les iframes sont des cadres dans lesquels on appelle d'autres pages. Il faut que ces page soient autorisées par le serveur qui les héberge d'être partagées par un autre site.
+                    </p>
+                    <p>
+                        Les iframe permette en réalite d'appeler quasiment tout type de fichier dans le cadre.
+                    </p>
+                    <h3>Un fichier txt dans une iframe</h3>
+                    <p>
+                        <a href="./documents/fichier.txt" target="_blank">Ouvrir fichier.txt dans un nouvel onglet</a>
+                    </p>
+                    <p>
+                        <a href="./documents/fichier.txt" target="_self">Ouvrir fichier.txt dans l'onglet</a>
+                    </p>
+                    <p>
+                        <a href="./documents/fichier.txt" target="_parent">Ouvrir fichier.txt dans le cadre parent</a>
+                    </p>
+                    <p>
+                        <a href="./documents/fichier.txt" target="_top">Ouvrir fichier.txt dans le cadre le plus "ancien"</a>
+                    </p>
+                    <p>
+                        <a href="./documents/fichier.txt" target="testIframe">Ouvrir fichier.txt dans le cadre testIframe"</a>
+                    </p>
+                    <p>
+                        <a href="./documents/CRAM.pdf" target="testIframe">Ouvrir cram.pdf dans le cadre testIframe"</a>
+                    </p>
+                    <p>
+                        <a href="./documents/books.xml" target="testIframe">Ouvrir books.xml dans le cadre</a>
+                    </p>
+                    <iframe name="testIframe" src="./documents/fichier.txt" width="300" height="300"></iframe>
+                </header>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

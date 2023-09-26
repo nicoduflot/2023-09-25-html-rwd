@@ -4,7 +4,7 @@ a, a:visited{
 }
 
 pre{
-    text-wrap: wrap;
+    white-space: pre-wrap;
 }
 
 body{
