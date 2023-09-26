@@ -66,17 +66,21 @@ sélecteur CSS :
 
 @import url('./edosz.css');
 @import url('./roboto.css');
+@import url('./bootstrap-icons.css');
 
 /* surcharge de la racine */
 :root{
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    font-size: 1.1rem;
+    --custom-font-size: 1.1rem;
+    font-size: var(--custom-font-size);
     line-height: 1.7rem;
     --base-goutiere: 0.5rem;
     --goutiere-w: var(--base-goutiere);
     --goutiere-h: calc( var(--base-goutiere) * 2 );
     --liens-page: darkred;
+    --liens-page-1-2: rgba(139, 0, 0, 0.5);
     --liens-page-hover: rgb(210, 70, 0);
+    --liens-page-hover-1-2: rgba(210, 70, 0, 0.5);
     --liens-nav: white;
     --bg-nav: black;
     --liens-nav-hover: var(--bg-nav);
@@ -92,7 +96,7 @@ sélecteur CSS :
 
 h1, h2, h3, h4, h5, h6{
     margin: 0;
-    line-height: 2rem;
+    line-height: calc( var(--custom-font-size) *2 );
     font-family: var(--heading-font);
     letter-spacing: 2px;
 }
@@ -108,6 +112,13 @@ a{
 
 a:hover, a:focus{
     color: var(--liens-page-hover);
+}
+
+p a::before{
+    font-family: 'bootstrap-icons';
+    content: "\f470";
+    display: inline-block;
+    font-size: 1.1rem;
 }
 
 /* Déclaration classes */
@@ -148,6 +159,41 @@ a:hover, a:focus{
 .deux-rem{
     font-size: 2rem;
 }
+
+.x2{
+    --element-font-size : calc( 2 * var(--custom-font-size));
+    font-size: var(--element-font-size);
+    --alignement: calc( var(--element-font-size) / 2 );
+}
+
+.x3{
+    --element-font-size : calc( 3 * var(--custom-font-size));
+    font-size: var(--element-font-size);
+    --alignement: calc( var(--element-font-size) / 3 );
+}
+
+.top-page{
+    position: fixed;
+    bottom: 2rem;
+}
+
+.centered{
+    left: calc( 50vw - var(--alignement) )  ;
+}
+
+.right{
+    right: 2rem;
+}
+
+.top-page a{
+    color: var(--liens-page-1-2);
+}
+
+.top-page a:hover{
+    color: var(--liens-page-hover-1-2);
+}
+
+
 
 /* Déclaration structure */
 
