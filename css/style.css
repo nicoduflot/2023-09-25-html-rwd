@@ -79,6 +79,7 @@ sélecteur CSS :
     --goutiere-h: calc( var(--base-goutiere) * 2 );
     --liens-page: darkred;
     --liens-page-1-2: rgba(139, 0, 0, 0.5);
+    --liens-page-1-4: rgba(139, 0, 0, 0.25);
     --liens-page-hover: rgb(210, 70, 0);
     --liens-page-hover-1-2: rgba(210, 70, 0, 0.5);
     --liens-nav: white;
@@ -201,11 +202,12 @@ video{
 
 .left{
     float: left;
-    margin-right: 0.5rem;
+    margin-right: var(--base-goutiere);
 }
 
 .right{
     float: right;
+    margin-left: var(--base-goutiere);
 }
 
 .clear{
@@ -220,8 +222,8 @@ video{
     font-family: 'bootstrap-icons';
     color: orangered;
     content: "\f336";
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: var(--base-goutiere);
+    padding-right: var(--base-goutiere);
 }
 
 table#tabTest{
@@ -241,7 +243,7 @@ table#tabTest td{
 .table tr > *{
     border-left: 1px solid black;
     border-right: 1px solid black;
-    padding: 0 0.5rem;
+    padding: 0 var(--base-goutiere);
 }
 
 .table th{
@@ -261,6 +263,35 @@ table#tabTest td{
     text-align: right;
 }
 
+.table-display{
+    width: 100%;
+    overflow-x:auto;
+}
+
+#exo-nav{
+    border-collapse: collapse;
+}
+
+#exo-nav tr > *{
+    border: 1px solid var(--liens-page);
+    padding: var(--base-goutiere);
+}
+
+#exo-nav tr th{
+    background-color: var(--liens-page);
+    color: var(--liens-nav);
+}
+
+#exo-nav tr td{
+    text-align: right;
+}
+
+#exo-nav tbody tr{
+    background-color: var(--liens-page-1-4);
+    &:hover{
+        background-color: var(--liens-page-1-2);
+    }
+}
 /* Déclaration structure */
 
 body{
@@ -272,6 +303,31 @@ body > header{
     color: var(--liens-nav);
     padding: 1rem;
     text-align: center;
+}
+
+body > nav ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    line-height: 2rem;
+}
+
+body > nav ul li{
+    border-bottom: 1px solid var(--liens-nav);
+    &:hover, &:focus{
+        border-bottom: 1px solid var(--liens-nav-hover);
+    }
+}
+
+body > nav ul a{
+    display: block;
+    color: var(--liens-nav);
+    background-color: var(--bg-nav);
+    padding: var(--base-goutiere);
+    &:hover, &:focus{
+        color: var(--liens-nav-hover);
+        background-color: var(--bg-nav-hover);
+    }
 }
 
 body > main article, 
