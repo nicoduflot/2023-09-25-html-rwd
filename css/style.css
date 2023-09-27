@@ -82,7 +82,8 @@ sélecteur CSS :
     --liens-page-hover: rgb(210, 70, 0);
     --liens-page-hover-1-2: rgba(210, 70, 0, 0.5);
     --liens-nav: white;
-    --bg-nav: black;
+    --bg-nav: rgb(0, 0, 0);
+    --bg-nav-25: rgba(0, 0, 0, 0.25);
     --liens-nav-hover: var(--bg-nav);
     --bg-nav-hover: var(--liens-nav);
     --heading-font: 'edosz';
@@ -209,6 +210,55 @@ video{
 
 .clear{
     clear: both;
+}
+
+.warning{
+    text-transform: uppercase;
+}
+
+.warning::before, .warning::after{
+    font-family: 'bootstrap-icons';
+    color: orangered;
+    content: "\f336";
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+table#tabTest{
+    border-collapse: collapse;
+}
+
+table#tabTest td{
+    border: 1px solid black;
+}
+
+.table{
+    border-collapse: collapse;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.table tr > *{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 0 0.5rem;
+}
+
+.table th{
+    background-color: var(--bg-nav);
+    color: var(--liens-nav);
+}
+
+.table > tbody > tr:nth-last-of-type(odd){
+    background-color: var(--bg-nav-25);
+}
+
+.table tr > th:first-child{
+    text-align: left;
+}
+
+.table tr > td{
+    text-align: right;
 }
 
 /* Déclaration structure */
