@@ -128,6 +128,49 @@ video{
     background-color: var(--bg-nav);
 }
 
+form{
+    margin: 0 auto;
+    /* équivalent à 
+    margin-left: auto;
+    margin-right: auto;
+    */
+}
+
+form fieldset{
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--bg-nav);
+    border-radius: var(--base-goutiere);
+}
+
+form label{
+    display: inline-block;
+    width: 280px;
+}
+
+form input, form select{
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    padding-left: var(--base-goutiere);
+    padding-right: var(--base-goutiere);
+    border-radius: 0.2rem;
+    width: 300px;
+    border: 1px solid var(--bg-nav);
+}
+
+form input[type="checkbox"],
+form input[type="radio"]{
+    width: 15px;
+}
+
+form textarea{
+    width: 100%;
+    height: 200px;
+    
+    border-radius: 0.2rem;
+    border: 1px solid var(--bg-nav);
+}
+
 /* Déclaration classes */
 
 .tm ol{
