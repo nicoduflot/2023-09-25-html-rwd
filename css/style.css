@@ -198,7 +198,18 @@ video{
     color: var(--liens-page-hover-1-2);
 }
 
+.left{
+    float: left;
+    margin-right: 0.5rem;
+}
 
+.right{
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
 
 /* Déclaration structure */
 

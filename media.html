@@ -31,6 +31,81 @@
                     <h2>Les media</h2>
                 </header>
                 <main>
+                    <h3>Les images</h3>
+                    <p>
+                        Les images sont affichées par deux balises <code>&lt;img&gt;</code> et <code>&lt;picture&gt;</code>
+                    </p>
+                    <p>
+                        <code>&lt;img&gt;</code> va chercher directement l'image appelée, si les attributs de hauteur ou de largeur ne sont indiqués, l'image s'affichera dans sa taille originale. Si on modifie la largeur, la hauteur se recalcul automatiquement et inversement.
+                    </p>
+                    <p>
+                        L'image peut être affichée dans un paragraphe, 
+                        <img src="./images/doc-signal-394w.png" alt="Portrait du Docteur Emmet Brown, dans le style synthwave, de la série de films Retour vers le future, dessiné numériquement par l'artiste James White, image téléchargée depuis sont site signalnoise" class="left" /> mais elle déformera l'apparence du texte SAUF si en CSS on lui indique une flotaison.
+                    </p>
+                    <p>
+                        Si la flottaison est utilisée, il ne faut pas oublier de "nettoyer" l'effet de bord de la flotaison afin que les éléments qui suivent l'image mais qui ne doivent pas appliquer l'effet de flottaison soit correctement placés.
+                    </p>
+                    <p class="clear">
+                        <code>&lt;picture&gt;</code> va souvent être utilisé pour l'adaptatif.
+                    </p>
+                    <p>
+                        <code>&lt;picture&gt;</code> utilise un ensemble d'image, de taille différentes, qu'on peut appeler à l'affichage selon des conditions.
+                    </p>
+                    <p>
+                        A savoir que l'on peut utiliser cette méthode directement avec <code>&lt;img&gt;</code>.
+                    </p>
+                    <img 
+                        srcset="
+                        ./images/doc-signal-200w.png 200w, 
+                        ./images/doc-signal-394w.png 394w" 
+                        sizes="
+                        (max-width: 600px) 200px, 394px" 
+                        src="./images/doc-signal-394w.png" 
+                        alt="Portrait du Docteur Emmet Brown, dans le style synthwave, de la série de films Retour vers le future, dessiné numériquement par l'artiste James White, image téléchargée depuis sont site signalnoise" />
+                    <p>
+                        Avec <code>&lt;picture&gt;</code> :
+                    </p>
+                    <picture>
+                        <source 
+                        srcset="./images/doc-signal-394w.png" 
+                        media="(min-width: 600px)"/>
+                        <img src="./images/doc-signal-200w.png" />
+                    </picture> 
+                    <p>
+                         permet plus facilement qu'  de proposer plusieurs format selon les largeurs d'écran
+                    </p>
+                    <pre>
+&lt;picture&gt;
+    &lt;source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" /&gt;
+    &lt;source media="(min-width: 800px)" srcset="elva-800w.jpg" /&gt;
+    &lt;img
+        src="elva-800w.jpg"
+        alt="Chris debout tenant sa fille Elva dans ses bras" /&gt;
+&lt;/picture&gt;
+                    </pre>
+                    <h3>La balise figure</h3>
+                    <p>
+                        La balise <code>&lt;figure&gt;</code> permet de préparer l'affichage d'un domument, media, elle sert de conteneur, et possède une balise optionnelle qui sert de légende à l'élément.
+                    </p>
+                    <p>
+                        La légende sera rattachée sémantiquement au document dans la figure.
+                    </p>
+                    <figure>
+                        <img src="./images/dolf-signal.png" alt="Portrait de Dolph Lundgren, dans le style synthwave, de la série de films Retour vers le future, dessiné numériquement par l'artiste James White, image téléchargée depuis sont site signalnoise" />
+                        <figcaption>
+                            James White a produit une série de portraits d'acteur - actrices des années 80 ou de films avec une esthétique des années 80 fantasmée (courant Synthwave), ici il s'agit de Dolph Lundgren dans les années 80 (Rocky II)
+                        </figcaption>
+                    </figure>
+                </main>
+                <footer>
+                    <a href="./article.html"><button>Lire +</button></a>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Les media</h2>
+                </header>
+                <main>
                     <h3>L'audio</h3>
                     <h4>
                         Pour l'audio hébergé sur le site
