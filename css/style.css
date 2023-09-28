@@ -88,6 +88,12 @@ sélecteur CSS :
     --liens-nav-hover: var(--bg-nav);
     --bg-nav-hover: var(--liens-nav);
     --heading-font: 'edosz';
+    --colonne-1-1: 100%;
+    --colonne-3-4: calc( 75% - 2 * var(--goutiere-w));
+    --colonne-2-3: calc( 66% - 2 * var(--goutiere-w));
+    --colonne-1-2: calc( 50% - 2 * var(--goutiere-w));
+    --colonne-1-3: calc( 33% - 2 * var(--goutiere-w));
+    --colonne-1-4: calc( 25% - 2 * var(--goutiere-w));
 }
 
 /* Déclaration générales */
@@ -376,9 +382,21 @@ body > nav ul a{
     }
 }
 
+body > main,
+body > nav > ul{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 body > main article, 
 body > main aside{
     margin: var(--goutiere-h) var(--goutiere-w);
+}
+
+body > main > section > *
+{
+    width: var(--colonne-1-1);
 }
 
 /* 
@@ -407,20 +425,103 @@ appliquer des style OU surcharger des styles existants selon des paramètres tel
         padding-left: calc( 2 * var(--base-goutiere));
         padding-right: calc( 2 * var(--base-goutiere));
     }
+
+    body > main,
+    body > nav > ul{
+        width: 540px;
+    }
 }
 
 @media screen and (min-width: 768px){
-
+    body > main,
+    body > nav > ul{
+        width: 720px;
+    }
 }
+
 @media screen and (min-width: 992px){
+    body > main,
+    body > nav > ul{
+        width: 960px;
+    }
 
+    body > main > section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    body > main > section > *
+    {
+        width: var(--colonne-1-2);
+    }
+    
+    body > main > section > *:last-child:nth-child(2n + 1){
+        width: var(--colonne-1-1);
+    }
 }
-@media screen and (min-width: 1200px){
 
+@media screen and (min-width: 1200px){
+    body > main,
+    body > nav > ul{
+        width: 1140px;
+    }
+
+    body > main > section > *,
+    body > main > section > *:last-child:nth-child(2n + 1)
+    {
+        width: var(--colonne-1-3);
+    }
+
+    body > main > section > *:last-child:nth-child(3n + 1)
+    {
+        width: var(--colonne-1-1);
+    }
+    
+    body > main > section > *:last-child:nth-child(3n + 2)
+    {
+        width: var(--colonne-2-3);
+    }
+
+
+    
 }
 @media screen and (min-width: 1400px){
+    body > main,
+    body > nav > ul{
+        width: 1320px;
+    }
+
+    body > main > section > *
+    {
+        width: var(--colonne-1-4);
+    }
+
+    body > main > section > *:last-child:nth-child(3n + 2)
+    {
+        width: var(--colonne-1-4);
+    }
+
+    body > main > section > *:last-child:nth-child(4n + 1)
+    {
+        width: var(--colonne-1-1);
+    }
+    
+    body > main > section > *:last-child:nth-child(4n + 2)
+    {
+        width: var(--colonne-3-4);
+    }
+    
+    body > main > section > *:last-child:nth-child(4n + 3)
+    {
+        width: var(--colonne-1-2);
+    }
+
 
 }
 @media screen and (min-width: 1600px){
-    
+    body > main,
+    body > nav > ul{
+        width: 1560px;
+    }
 }
