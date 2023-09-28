@@ -176,14 +176,16 @@
                     <p>
                         Youtube impose un format da l'iframe, il faudra modifier le CSS voir créer un élément enveloppeur afin de rendre l'iframe adaptative
                     </p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rrT6v5sOwJg?si=Y2hpSkf4PmUbk4re" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <figure class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/rrT6v5sOwJg?si=Y2hpSkf4PmUbk4re" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </figure>
                     <h4>Daily motion</h4>
                     <p>
                         Daily motion apporte une solution adaptative inclue, avec un élément conteneur et une iframe appliquant du style CSS enbalise afin d'assurer l'adaptabilité à la largeur de l'affichage (device-width)
                     </p>
-                    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-                        <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x1nofw" width="100%" height="100%" allowfullscreen title="Dailymotion Video Player" ></iframe>
-                        </div>
+                    <figure class="ratio ratio-16x9">
+                        <iframe frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x1nofw" allowfullscreen title="Dailymotion Video Player" ></iframe>
+                    </figure>
                 </main>
                 <footer>
                     <a href="./article.html"><button>Lire +</button></a>
@@ -220,7 +222,16 @@
                     <p>
                         <a href="./documents/books.xml" target="testIframe">Ouvrir books.xml dans le cadre</a>
                     </p>
-                    <iframe name="testIframe" src="./documents/fichier.txt" width="300" height="300"></iframe>
+                    <figure class="ratio ratio-a4-portrait">
+                        <iframe name="testIframe" src="./documents/fichier.txt" ></iframe>
+                    </figure>
+                    <h3>Les ratio pour l'adaptatif</h3>
+                    <p>
+                        On teste le ratio a4 paysage
+                    </p>
+                    <figure class="ratio ratio-a4-paysage">
+                        <iframe src="./documents/PP3.pdf"></iframe>
+                    </figure>
                 </header>
             </article>
         </section>

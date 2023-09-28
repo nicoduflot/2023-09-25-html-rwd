@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +8,9 @@
     <title>DAWAN - Formation HTML5 - CSS3 - RWD</title>
     <!-- on pose généralement après le title les balises pour le css et le js -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/trucs.css" />
 </head>
+
 <body>
     <header>
         <h1>Formation HTML5 CSS3 RWD</h1>
@@ -24,5 +27,33 @@
             <li><a href="./bootstrap.html" title="lien vers une page faîte en utlisant bootstrap">Bootstrap</a></li>
         </ul>
     </nav>
+    <main>
+        <section>
+            <article>
+                <header>
+                    <h2>Des trucs en CSS</h2>
+                </header>
+                <main>
+                    <h3>
+                        la balise <code>&lt;svg&gt;</code>
+                    </h3>
+                    <svg width="100%" height="10" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;">
+                        <polyline points="0,0 5,0 300,10 0,10" style="stroke:darkred;fill:darkred;"></polyline>
+                    </svg>
+                    <br />
+                    <svg version="1.1" baseProfile="full" width="300" height="200"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="darkred" />
+                        <circle cx="100" cy="100" r="80" fill="darkgreen" />
+                        <circle cx="200" cy="100" r="80" fill="darkviolet" />
+                        <circle cx="150" cy="100" r="80" fill="black" />
+                        <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
+                    </svg>
+                    
+                </main>
+            </article>
+        </section>
+    </main>
 </body>
+
 </html>
