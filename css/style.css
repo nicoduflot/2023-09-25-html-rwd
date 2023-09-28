@@ -348,6 +348,10 @@ body > header{
     text-align: center;
 }
 
+body > nav{
+    background-color: var(--bg-nav);
+}
+
 body > nav ul{
     margin: 0;
     list-style-type: none;
@@ -365,7 +369,6 @@ body > nav ul li{
 body > nav ul a{
     display: block;
     color: var(--liens-nav);
-    background-color: var(--bg-nav);
     padding: var(--base-goutiere);
     &:hover, &:focus{
         color: var(--liens-nav-hover);
@@ -378,3 +381,46 @@ body > main aside{
     margin: var(--goutiere-h) var(--goutiere-w);
 }
 
+/* 
+déclaration des media queries 
+appliquer des style OU surcharger des styles existants selon des paramètres tels que : 
+- orientation de l'affichage
+- largeur minimale ou maximale de l'affichage du site à l'écran
+- affichage pour un écran ou l'impression
+*/
+
+@media screen and (min-width: 576px){
+    body > nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    body > nav ul li{
+        border-bottom: unset;
+        &:hover, &:focus{
+            border-bottom: unset;
+        }
+    }
+
+    body > nav ul li a{
+        padding-left: calc( 2 * var(--base-goutiere));
+        padding-right: calc( 2 * var(--base-goutiere));
+    }
+}
+
+@media screen and (min-width: 768px){
+
+}
+@media screen and (min-width: 992px){
+
+}
+@media screen and (min-width: 1200px){
+
+}
+@media screen and (min-width: 1400px){
+
+}
+@media screen and (min-width: 1600px){
+    
+}
