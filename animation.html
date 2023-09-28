@@ -6,7 +6,10 @@
     <meta name="description" content="La formation HTML5 CSS3 RWD" />
     <title>DAWAN - Formation HTML5 - CSS3 - RWD</title>
     <!-- on pose généralement après le title les balises pour le css et le js -->
+    <link rel="stylesheet" href="./css/animate.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./css/animation.css" />
 </head>
 <body>
     <header>
@@ -24,5 +27,84 @@
             <li><a href="./bootstrap.html" title="lien vers une page faîte en utlisant bootstrap">Bootstrap</a></li>
         </ul>
     </nav>
+    <main>
+        <article>
+            <header>
+                <h2 class="animate__animated animate__bounce animate__infinite">Les animations CSS</h2>
+            </header>
+            <main>
+                <h3>Les "ready-made" de l'internet</h3>
+                <p>
+                    Des bibliothèques d'animation sont disponible sur internet, il suffit la plupart du temps de récupérer un css, l'ajouter à la page et utiliser les classes proposée, évidement selon un ordre précis.
+                </p>
+                <h3>Animation CSS DIY</h3>
+                <p class="translation">
+                    Le principe des animations CSS sont, par exemple, de préparer l'élément à l'animation avec une transition, on programme la ou les animation et / ou transformattion dans cette transition.
+                </p>
+                <p>
+                    Ensuite, sur le pseudo sélecteur (par exemple au survol :hover) décrire les contenu des transition et / transformation.
+                </p>
+                <div class="table-display">
+                    <table id="exo-nav" class="scale">
+                        <caption>
+                            Classement des navigateurs les plus utilisés dans le monde, tous supports confondus Année 2022
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>Classement</th>
+                                <th>Navigateur</th>
+                                <th>Part de marché (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <a href="">
+                            <tr tabindex="1">
+                                    <td>1</td>
+                                    <td>Goole Chrome</td>
+                                    <td>64.8</td>
+                                </tr>
+                            </a>
+                            <tr tabindex="2">
+                                <td>2</td>
+                                <td>Safari</td>
+                                <td>19.5</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Microsoft Edge</td>
+                                <td>4.6</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Mozilla Firefox</td>
+                                <td>2.9</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Samsung Internet</td>
+                                <td>2.6</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Classement</th>
+                                <th>Navigateur</th>
+                                <th>Part de marché (%)</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <h3>Animation avec les Images clefs</h3>
+                <p>
+                    Comme pour les dessin animés, l'animateur principale va définir des images clefs d'un story board, le navigateur va faire office d'intervaliste et créer les images intermédiaire entre les images clefs.
+                </p>
+                <div class="espace-animation">
+                    <div class="cercle-animation animation">
+                        <i class="bi bi-arrow-right-circle-fill"></i>
+                    </div>
+                </div>
+            </main>
+        </article>
+    </main>
 </body>
 </html>
