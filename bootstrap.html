@@ -1,28 +1,77 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="La formation HTML5 CSS3 RWD" />
     <title>DAWAN - Formation HTML5 - CSS3 - RWD</title>
     <!-- on pose généralement après le title les balises pour le css et le js -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/bootstrap-icons.css" />
+    <script src="./js/bootstrap.bundle.js"></script>
 </head>
+
 <body>
     <header>
-        <h1>Formation HTML5 CSS3 RWD</h1>
+        <nav class="navbar navbar-dark navbar-expand-md bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand" href="./"><h1 class="small m-0">Formation HTML CSS RWD</h1></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="bi bi-search"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarHeader">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control form-control-sm me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light btn-sm" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-dark navbar-expand-md bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="./" title="Lien vers l'accueil">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./article.html" title="Lien vers l'article">Article</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contact.html" title="lien vers le formulaire de contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./media.html" title="lien vers l'affichage des media">Media</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./animation.html" title="lien vers les animation en CSS">Animation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./trucs.html" title="lien vers des trucs CSS">Trucs CSS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./grid.html" title="lien vers les grille en CSS">Grille CSS</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="./bootstrap.html" title="lien vers une page faîte en utlisant bootstrap">Bootstrap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="./" title="Lien vers l'accueil">Accueil</a></li>
-            <li><a href="./article.html" title="Lien vers l'article">Article</a></li>
-            <li><a href="./contact.html" title="lien vers le formulaire de contact">Contact</a></li>
-            <li><a href="./media.html" title="lien vers l'affichage des media">Media</a></li>
-            <li><a href="./animation.html" title="lien vers les animation en CSS">Animation</a></li>
-            <li><a href="./trucs.html" title="lien vers des trucs CSS">Trucs CSS</a></li>
-            <li><a href="./grid.html" title="lien vers les grille en CSS">Grille CSS</a></li>
-            <li><a href="./bootstrap.html" title="lien vers une page faîte en utlisant bootstrap">Bootstrap</a></li>
-        </ul>
-    </nav>
+
+    <footer class="bg-dark text-white py-5" data-bs-theme="dark">
+        <div class="container">
+            <section class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    &copy; DAWAN Sept - 2023
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <a href="./contact.html">Nous contacter</a>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <p class="mt-2">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, nisi quis soluta unde rerum laboriosam eius?
+                    </p>
+                </div>
+            </section>
+        </div>
+    </footer>
 </body>
+
 </html>
