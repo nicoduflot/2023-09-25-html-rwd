@@ -10,23 +10,52 @@
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/bootstrap-icons.css" />
     <script src="./js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="./css/custom-bootstrap.css" />
+    <script>
+        window.addEventListener('DOMContentLoaded', function(){
+            let allTabs = document.querySelectorAll('[data-info-target]');
+            allTabs.forEach(function(tab){
+                /* on abonne tous les onglets à l'écoute du clic dessus */
+                tab.addEventListener('click', function(click){
+                    /* quand un des onglets est cliqué on récupère le clic */
+                    click.preventDefault();
+                    /* on enlève la classe active de tous les tab */
+                    allTabs.forEach(function(lien){
+                        lien.classList.remove('active');
+                    });
+                    /* on anoute la classe active au tab cliqué */
+                    tab.classList.add('active');
+                    /* on récupère la cible a afficher via le dataset */
+                    let idtab = tab.dataset.infoTarget;
+                    /* on ajoute la class d-none à tous les éléments */
+                    document.querySelectorAll('.tabinfo').forEach(function(element){
+                        element.classList.add('d-none');
+                    });
+                    /* on enlève la classe d-none à la cible identifiée par le dataset */
+                    document.querySelector(idtab).classList.remove('d-none');
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-dark navbar-expand-md bg-dark" data-bs-theme="dark">
             <div class="container">
-                <a class="navbar-brand" href="./"><h1 class="small m-0">Formation HTML CSS RWD</h1></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <a class="navbar-brand" href="./">
+                    <h1 class="small m-0">Formation HTML CSS RWD</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="bi bi-search"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarHeader">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control form-control-sm me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control form-control-sm me-2" type="search" placeholder="Search"
+                            aria-label="Search">
                         <button class="btn btn-outline-light btn-sm" type="submit">Search</button>
                     </form>
                 </div>
@@ -35,26 +64,192 @@
         <nav class="navbar navbar-dark navbar-expand-md bg-dark" data-bs-theme="dark">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="./" title="Lien vers l'accueil">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./article.html" title="Lien vers l'article">Article</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./contact.html" title="lien vers le formulaire de contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./media.html" title="lien vers l'affichage des media">Media</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./animation.html" title="lien vers les animation en CSS">Animation</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./trucs.html" title="lien vers des trucs CSS">Trucs CSS</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./grid.html" title="lien vers les grille en CSS">Grille CSS</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="./bootstrap.html" title="lien vers une page faîte en utlisant bootstrap">Bootstrap</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./article.html"
+                                title="Lien vers l'article">Article</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contact.html"
+                                title="lien vers le formulaire de contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./media.html"
+                                title="lien vers l'affichage des media">Media</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./animation.html"
+                                title="lien vers les animation en CSS">Animation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./trucs.html"
+                                title="lien vers des trucs CSS">Trucs CSS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./grid.html"
+                                title="lien vers les grille en CSS">Grille CSS</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="./bootstrap.html"
+                                title="lien vers une page faîte en utlisant bootstrap">Bootstrap</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
+    <main class="container">
+        <section class="row my-2">
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <figure class="carousel-item active">
+                        <img src="./images/doc-signal-394w.png" class="img-fluid" alt="...">
+                        <figcaption class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="carousel-item">
+                        <img src="./images/dolf-signal.png" class="img-fluid" alt="...">
+                        <figcaption class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="carousel-item">
+                        <img src="./images/drive-signal.png" class="img-fluid" alt="...">
+                        <figcaption class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="carousel-item">
+                        <img src="./images/SheRa-Netflix-2--673x1024.jpg" class="img-fluid" alt="...">
+                        <figcaption class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <section class="row my-2">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 d-flex align-content-stretch my-1">
+                <div class="card ">
+                    <div class="card-header">
+                        <h2>Les cartes</h2>
+                    </div>
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime id laboriosam fugiat voluptates aut voluptas natus minima incidunt architecto, assumenda molestias provident sapiente. Neque omnis nesciunt obcaecati ut mollitia provident?
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-outline-secondary">yes</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-6 col-xxl-2 d-flex align-content-stretch my-1">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Les cartes</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime id laboriosam fugiat voluptates aut voluptas natus minima incidunt architecto, assumenda molestias provident sapiente. Neque omnis nesciunt obcaecati ut mollitia provident?
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime id laboriosam fugiat voluptates aut voluptas natus minima incidunt architecto, assumenda molestias provident sapiente. Neque omnis nesciunt obcaecati ut mollitia provident?
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-outline-secondary">yes</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 d-flex align-content-stretch my-1">
+                <div class="card ">
+                    <div class="card-header">
+                        <h2>Les cartes</h2>
+                    </div>
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime id laboriosam fugiat voluptates aut voluptas natus minima incidunt architecto, assumenda molestias provident sapiente. Neque omnis nesciunt obcaecati ut mollitia provident?
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-outline-secondary">yes</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-6 col-xxl-2 d-flex align-content-stretch my-1">
+                <div class="card ">
+                    <div class="card-header">
+                        <h2>Les cartes</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#" data-info-target="#info-01">Info 1</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"data-info-target="#info-02">Info 2</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#"data-info-target="#info-03">Info 3</a>
+                            </li>
+                          </ul>
+                          <p id="info-01" class="tabinfo">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime id laboriosam fugiat voluptates aut voluptas natus minima incidunt architecto, assumenda molestias provident sapiente. Neque omnis nesciunt obcaecati ut mollitia provident?
+                          </p>
+                          <p id="info-02" class="tabinfo d-none">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe corporis quia eos ullam sint totam animi dicta beatae? Laudantium, error maxime minima accusantium tenetur consectetur soluta aut voluptas eligendi quis?
+                        </p>
+                        <p id="info-03" class="tabinfo d-none">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum quibusdam, assumenda libero quo quae incidunt debitis. Architecto, similique dolorem, veniam voluptatibus delectus hic dolorum, nisi nihil laudantium laborum tenetur.
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-outline-secondary">yes</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 d-flex align-content-stretch my-1">
+                <div class="card ">
+                    <div class="card-header">
+                        <h2>Les cartes</h2>
+                    </div>
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime id laboriosam fugiat voluptates aut voluptas natus minima incidunt architecto, assumenda molestias provident sapiente. Neque omnis nesciunt obcaecati ut mollitia provident?
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-outline-secondary">yes</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 d-flex align-content-stretch my-1">
+                <div class="card ">
+                    <div class="card-header">
+                        <h2>Les cartes</h2>
+                    </div>
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime id laboriosam fugiat voluptates aut voluptas natus minima incidunt architecto, assumenda molestias provident sapiente. Neque omnis nesciunt obcaecati ut mollitia provident?
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-outline-secondary">yes</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer class="bg-dark text-white py-5" data-bs-theme="dark">
         <div class="container">
             <section class="row">
@@ -66,7 +261,8 @@
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <p class="mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, nisi quis soluta unde rerum laboriosam eius?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, nisi quis soluta unde rerum
+                        laboriosam eius?
                     </p>
                 </div>
             </section>

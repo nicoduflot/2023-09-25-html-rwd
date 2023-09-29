@@ -1,0 +1,50 @@
+
+/* 
+
+CSS de surcharge pour customiser les apparences par défaut de bootstrap
+
+*/
+
+/* CSS pour adapter le carousel au site */
+.carousel{
+    --max-height: 10vh;
+    height: calc(var(--max-height) * 2);
+}
+
+.carousel img{
+    object-fit: contain;
+    max-height: calc(var(--max-height) * 2);
+}
+
+.carousel.slide{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel figure{
+    text-align: center;
+}
+
+.carousel figcaption{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+@media screen and (min-width: 576px){
+    .carousel{
+        height: calc(var(--max-height) * 3);
+    }
+
+    .carousel img{
+        max-height: calc(var(--max-height) * 3);
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .carousel{
+        height: calc(var(--max-height) * 4);
+    }
+
+    .carousel img{
+        max-height: calc(var(--max-height) * 4);
+    }       
+}
